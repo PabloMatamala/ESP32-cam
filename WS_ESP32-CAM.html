@@ -442,7 +442,7 @@
                         <div class="input-group" id="aec_value-group">
                             <label for="aec_value">Exposure</label>
                             <div class="range-min">0</div>
-                            <input type="range" id="aec_value" min="0" max="1200" value="204" class="default-action">
+                            <input type="number" id="aec_value" min="0" max="1200" value="204" class="default-action">
                             <div class="range-max">1200</div>
                         </div>
                         <div class="input-group" id="agc-group">
@@ -492,46 +492,11 @@
                                 <label class="slider" for="lenc"></label>
                             </div>
                         </div>
-                        <div class="input-group" id="hmirror-group">
-                            <label for="hmirror">H-Mirror</label>
-                            <div class="switch">
-                                <input id="hmirror" type="checkbox" class="default-action" checked="checked">
-                                <label class="slider" for="hmirror"></label>
-                            </div>
-                        </div>
-                        <div class="input-group" id="vflip-group">
-                            <label for="vflip">V-Flip</label>
-                            <div class="switch">
-                                <input id="vflip" type="checkbox" class="default-action" checked="checked">
-                                <label class="slider" for="vflip"></label>
-                            </div>
-                        </div>
                         <div class="input-group" id="dcw-group">
                             <label for="dcw">DCW (Downsize EN)</label>
                             <div class="switch">
                                 <input id="dcw" type="checkbox" class="default-action" checked="checked">
                                 <label class="slider" for="dcw"></label>
-                            </div>
-                        </div>
-                        <div class="input-group" id="colorbar-group">
-                            <label for="colorbar">Color Bar</label>
-                            <div class="switch">
-                                <input id="colorbar" type="checkbox" class="default-action">
-                                <label class="slider" for="colorbar"></label>
-                            </div>
-                        </div>
-                        <div class="input-group" id="face_detect-group">
-                            <label for="face_detect">Face Detection</label>
-                            <div class="switch">
-                                <input id="face_detect" type="checkbox" class="default-action">
-                                <label class="slider" for="face_detect"></label>
-                            </div>
-                        </div>
-                        <div class="input-group" id="face_recognize-group">
-                            <label for="face_recognize">Face Recognition</label>
-                            <div class="switch">
-                                <input id="face_recognize" type="checkbox" class="default-action">
-                                <label class="slider" for="face_recognize"></label>
                             </div>
                         </div>
                         <div class="input-group" id="flash-group">
@@ -540,50 +505,6 @@
                                 <input id="flash" type="checkbox" class="default-action">
                                 <label class="slider" for="flash"></label>
                             </div>
-                        </div>
-                        <div class="input-group" id="ges-group">
-                            <label for="ges">Global external shutter</label>
-                            <select id="ges" class="default-action">
-                                <option value="0" selected="selected">None</option>
-                                <option value="1">shot</option>
-                                <option value="2">shots</option>
-                                <option value="3">5shots</option>
-                            </select>
-                        </div>
-                        <div class="input-group" id="ges_gpio-group">
-                            <label for="ges_gpio">GPIO 4/13</label>
-                            <div class="switch">
-                                <input id="ges_gpio" type="checkbox" class="default-action">
-                                <label class="slider" for="ges_gpio"></label>
-                            </div>
-                            <button id="ges_doit">doit</button>
-                        </div>
-                        <div class="input-group" id="ges_vsync-group">
-                            <label for="ges_vsync">Wait for next VSYNC</label>
-                            <div class="switch">
-                                <input id="ges_vsync" type="checkbox" class="default-action">
-                                <label class="slider" for="ges_vsync"></label>
-                            </div>
-                        </div>
-                        <div class="input-group" id="ges_offset-group">
-                            <label for="ges_offset">Offset [ms]</label>
-                            <div class="number"></div>
-                            <input id="ges_offset" type="number" class="default-action">
-                        </div>
-                        <div class="input-group" id="ges_repeat-group">
-                            <label for="ges_repeat">Repeat</label>
-                            <div class="number"></div>
-                            <input id="ges_repeat" type="number" class="default-action">
-                        </div>
-                        <div class="input-group" id="ges_on-group">
-                            <label for="ges_on">On [Âµs]</label>
-                            <div class="number"></div>
-                            <input id="ges_on" type="number" class="default-action">
-                        </div>
-                        <div class="input-group" id="ges_off-group">
-                            <label for="ges_off">Off [Âµs]</label>
-                            <div class="number"></div>
-                            <input id="ges_off" type="number" class="default-action">
                         </div>
                         <section id="buttons">
                             <button id="get-still">Get Still</button>
