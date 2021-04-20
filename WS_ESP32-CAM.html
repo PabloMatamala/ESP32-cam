@@ -339,14 +339,14 @@
     <body>
         <section class="main">
             <div id="logo">
-                <label for="nav-toggle-cb" id="nav-toggle">&#9776;&nbsp;&nbsp;Toggle OV2640 settings</label>
+                <label for="nav-toggle-cb" id="nav-toggle">&#9776;&nbsp;&nbsp;Configuracion de ESP32-CAM</label>
             </div>
             <div id="content">
                 <div id="sidebar">
                     <input type="checkbox" id="nav-toggle-cb" checked="checked">
                     <nav id="menu">
                         <div class="input-group" id="framesize-group">
-                            <label for="framesize">Resolution</label>
+                            <label for="framesize">Resolucion</label>
                             <select id="framesize" class="default-action">
                                 <option value="10">UXGA(1600x1200)</option>
                                 <option value="9">SXGA(1280x1024)</option>
@@ -360,38 +360,38 @@
                             </select>
                         </div>
                         <div class="input-group" id="quality-group">
-                            <label for="quality">Quality</label>
+                            <label for="quality">Calidad</label>
                             <div class="range-min">10</div>
                             <input type="range" id="quality" min="10" max="63" value="10" class="default-action">
                             <div class="range-max">63</div>
                         </div>
                         <div class="input-group" id="brightness-group">
-                            <label for="brightness">Brightness</label>
+                            <label for="brightness">Brillo</label>
                             <div class="range-min">-2</div>
                             <input type="range" id="brightness" min="-2" max="2" value="0" class="default-action">
                             <div class="range-max">2</div>
                         </div>
                         <div class="input-group" id="contrast-group">
-                            <label for="contrast">Contrast</label>
+                            <label for="contrast">Contraste</label>
                             <div class="range-min">-2</div>
                             <input type="range" id="contrast" min="-2" max="2" value="0" class="default-action">
                             <div class="range-max">2</div>
                         </div>
                         <div class="input-group" id="saturation-group">
-                            <label for="saturation">Saturation</label>
+                            <label for="saturation">Saturacion</label>
                             <div class="range-min">-2</div>
                             <input type="range" id="saturation" min="-2" max="2" value="0" class="default-action">
                             <div class="range-max">2</div>
                         </div>
                         <div class="input-group" id="special_effect-group">
-                            <label for="special_effect">Special Effect</label>
+                            <label for="special_effect">Efecto Espcial</label>
                             <select id="special_effect" class="default-action">
                                 <option value="0" selected="selected">No Effect</option>
-                                <option value="1">Negative</option>
-                                <option value="2">Grayscale</option>
-                                <option value="3">Red Tint</option>
-                                <option value="4">Green Tint</option>
-                                <option value="5">Blue Tint</option>
+                                <option value="1">Negativo</option>
+                                <option value="2">EScala De Grises</option>
+                                <option value="3">Tinte Rojo</option>
+                                <option value="4">Tinte Verde</option>
+                                <option value="5">Tinte Azul</option>
                                 <option value="6">Sepia</option>
                             </select>
                         </div>
@@ -440,7 +440,7 @@
                             <div class="range-max">2</div>
                         </div>
                         <div class="input-group" id="aec_value-group">
-                            <label for="aec_value">Exposure</label>
+                            <label for="aec_value">Exposicion</label>
                             <div class="range-min">0</div>
                             <input type="number" id="aec_value" min="0" max="1200" value="204" class="default-action">
                             <div class="range-max">1200</div>
@@ -453,7 +453,7 @@
                             </div>
                         </div>
                         <div class="input-group hidden" id="agc_gain-group">
-                            <label for="agc_gain">Gain</label>
+                            <label for="agc_gain">Ganancia</label>
                             <div class="range-min">1x</div>
                             <input type="range" id="agc_gain" min="0" max="30" value="5" class="default-action">
                             <div class="range-max">31x</div>
@@ -486,7 +486,7 @@
                             </div>
                         </div>
                         <div class="input-group" id="lenc-group">
-                            <label for="lenc">Lens Correction</label>
+                            <label for="lenc">Correccion del lente</label>
                             <div class="switch">
                                 <input id="lenc" type="checkbox" class="default-action" checked="checked">
                                 <label class="slider" for="lenc"></label>
@@ -507,8 +507,8 @@
                             </div>
                         </div>
                         <section id="buttons">
-                            <button id="get-still">Get Still</button>
-                            <button id="toggle-stream">Start Stream</button>
+                            <button id="get-still">Tomar Foto</button>
+                            <button id="toggle-stream">Iniciar Stream</button>
                             <button id="face_enroll" class="disabled" disabled="disabled">Enroll Face</button>
                         </section>
                     </nav>
@@ -641,7 +641,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }
     })
 
-  // read initial values
+  // read initial values (Leer Valores Iniciales)
   fetch(`${baseHost}/status`)
     .then(function (response) {
       return response.json()
@@ -672,7 +672,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     streamButton.innerHTML = 'Stop Stream'
   }
 
-  // Attach actions to buttons
+  // Attach actions to buttons (Adjustar Acciones a botones)
   stillButton.onclick = () => {
     stopStream()
     view.src = `${baseHost}/capture?_cb=${Date.now()}`
@@ -697,15 +697,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
     updateConfig(enrollButton)
   }
 
-  // Attach default on change action
+  // Attach default on change action (Adjuntar Accion de cambio por defecto)
   document
     .querySelectorAll('.default-action')
     .forEach(el => {
       el.onchange = () => updateConfig(el)
     })
 
-  // Custom actions
-  // Gain
+  // Custom actions (Acciones personalizadas)
+  // Gain (Ganancia))
   const agc = document.getElementById('agc')
   const agcGain = document.getElementById('agc_gain-group')
   const gainCeiling = document.getElementById('gainceiling-group')
@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 
-  // Exposure
+  // Exposure (Exposicion)
   const aec = document.getElementById('aec')
   const exposure = document.getElementById('aec_value-group')
   aec.onchange = () => {
@@ -728,7 +728,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     aec.checked ? hide(exposure) : show(exposure)
   }
 
-  // AWB
+  // AWB (Balance de Blanco Automatico)
   const awb = document.getElementById('awb_gain')
   const wb = document.getElementById('wb_mode-group')
   awb.onchange = () => {
@@ -736,7 +736,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     awb.checked ? show(wb) : hide(wb)
   }
 
-  // Detection and framesize
+  // Detection and framesize (deteccion y tamaño de fotograma)
   const detect = document.getElementById('face_detect')
   const recognize = document.getElementById('face_recognize')
   const framesize = document.getElementById('framesize')
@@ -777,7 +777,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 
-  // Global external shutter
+  // Global external shutter (Codigo creado por usuario)
   const ges = document.getElementById('ges')
   const ges_gpio = document.getElementById('ges_gpio-group')
   const ges_vsync = document.getElementById('ges_vsync-group')
