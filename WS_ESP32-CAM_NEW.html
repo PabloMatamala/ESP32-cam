@@ -34,7 +34,7 @@
                 margin-top: -10px;
                 margin-right: 10px;
             }
-
+ 
             #content {
                 display: flex;
                 flex-wrap: wrap;
@@ -671,6 +671,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 
   // Attach actions to buttons (Adjustar Acciones a botones)
+  
   let initialValue
   if (el.id === "Photo"){
     if (value == 1) {
@@ -728,7 +729,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       old4 = old3
       show(viewContainer)
       }
-    } else if (value == 6) {
+      } else if (value == 6) {
       stillButton.onclick = () => {
       stopStream()
       now = Date.now()
@@ -744,8 +745,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
       view6.src = `${baseHost}/capture?_cb=${old5}`
       old5 = old4
       show(viewContainer)
-    }
-  } else if (value == 7) {
+      }
+      } else if (value == 7) {
       stillButton.onclick = () => {
       stopStream()
       now = Date.now()
@@ -763,8 +764,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
       view7.src = `${baseHost}/capture?_cb=${old6}`
       old6 = old5
       show(viewContainer)
-    }
-  } else if (value == 8) {
+      }
+      } else if (value == 8) {
       stillButton.onclick = () => {
       stopStream()
       now = Date.now()
@@ -784,8 +785,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
       view8.src = `${baseHost}/capture?_cb=${old7}`
       old7 = old6
       show(viewContainer)
-    }
-  }
+      }
+      }
   }
 
   closeButton.onclick = () => {
