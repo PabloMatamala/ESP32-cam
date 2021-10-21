@@ -28,7 +28,7 @@
                 display: none;
                 flex-wrap: nowrap;
                 min-width: 340px;
-                background: #160d0d;
+                background: #223035;
                 padding: 8px;
                 border-radius: 4px;
                 margin-top: -10px;
@@ -62,7 +62,7 @@
                 margin-top: 8px;
             }
 
-            @media (min-width: 800px) and (orientation:landscape) {
+            @media (min-width: 700px) and (orientation:landscape) {
                 #content {
                     display:flex;
                     flex-wrap: nowrap;
@@ -528,16 +528,19 @@
                 </div>
                 <figure>
                     <div id="stream-container" class="image-container hidden">
-                        <div class="close" id="close-stream">x</div>
-                        <img id="stream" src="">
-                        <img id="stream2" src="">
-                        <img id="stream3" src="">
-                        <img id="stream4" src="">
-                        <img id="stream5" src="">
-                        <img id="stream6" src="">
-                        <img id="stream7" src="">
-                        <img id="stream8" src="">
-                    </div>                    
+                        <div class="close" id="close-stream">X</div>
+                        <img id="stream" src="">                   
+                  </div>  
+                    <div id="stream-container" class="image-container hidden">
+                      <div class="close" id="close-stream">x</div>
+                      <img id="stream2" src="">
+                      <img id="stream3" src="">
+                      <img id="stream4" src="">
+                      <img id="stream5" src="">
+                      <img id="stream6" src="">
+                      <img id="stream7" src="">
+                      <img id="stream8" src="">
+                  </div>                  
                 </figure>
             </div>
         </section>
@@ -657,7 +660,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const streamButton = document.getElementById('toggle-stream')
   const enrollButton = document.getElementById('face_enroll')
   const closeButton = document.getElementById('close-stream')
-  old = 0
+
 
   const stopStream = () => {
     window.stop();
@@ -671,122 +674,37 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 
   // Attach actions to buttons (Adjustar Acciones a botones)
-  
-  let initialValue
-  if (el.id === "Photo"){
-    if (value == 1) {
-      stillButton2.onclick = () => {
+  stillButton.onclick = () => {
       stopStream()
       now = Date.now()
-      view.src = `${baseHost}/capture?_cb=${now}`
-      show(viewContainer)
-      }
-      } else if (value == 2) {
-      stillButton.onclick = () => {
-      stopStream()
-      now = Date.now()
-      view.src = `${baseHost}/capture?_cb=${now}`
-      view2.src = `${baseHost}/capture?_cb=${old1}`
-      old1 = now
-      show(viewContainer)
-      }
-      } else if (value == 3) {
-      stillButton.onclick = () => {
-      stopStream()
-      now = Date.now()
+
+      old1 = 0
+      old2 = 0
+      old3 = 0
+      old4 = 0
+      old5 = 0
+      old6 = 0
+      old7 = 0
+
+
       view.src = `${baseHost}/capture?_cb=${now}`
       view2.src = `${baseHost}/capture?_cb=${old1}`
-      old1 = now
       view3.src = `${baseHost}/capture?_cb=${old2}`
-      old2 = old1
-      show(viewContainer)
-      }
-      } else if (value == 4) {
-      stillButton.onclick = () => {
-      stopStream()
-      now = Date.now()
-      view.src = `${baseHost}/capture?_cb=${now}`
-      view2.src = `${baseHost}/capture?_cb=${old1}`
-      old1 = now
-      view3.src = `${baseHost}/capture?_cb=${old2}`
-      old2 = old1
       view4.src = `${baseHost}/capture?_cb=${old3}`
-      old3 = old2
-      show(viewContainer)
-      }
-      } else if (value == 5) {
-      stillButton.onclick = () => {
-      stopStream()
-      now = Date.now()
-      view.src = `${baseHost}/capture?_cb=${now}`
-      view2.src = `${baseHost}/capture?_cb=${old1}`
-      old1 = now
-      view3.src = `${baseHost}/capture?_cb=${old2}`
-      old2 = old1
-      view4.src = `${baseHost}/capture?_cb=${old3}`
-      old3 = old2
       view5.src = `${baseHost}/capture?_cb=${old4}`
-      old4 = old3
-      show(viewContainer)
-      }
-      } else if (value == 6) {
-      stillButton.onclick = () => {
-      stopStream()
-      now = Date.now()
-      view.src = `${baseHost}/capture?_cb=${now}`
-      view2.src = `${baseHost}/capture?_cb=${old1}`
-      old1 = now
-      view3.src = `${baseHost}/capture?_cb=${old2}`
-      old2 = old1
-      view4.src = `${baseHost}/capture?_cb=${old3}`
-      old3 = old2
-      view5.src = `${baseHost}/capture?_cb=${old4}`
-      old4 = old3
       view6.src = `${baseHost}/capture?_cb=${old5}`
-      old5 = old4
-      show(viewContainer)
-      }
-      } else if (value == 7) {
-      stillButton.onclick = () => {
-      stopStream()
-      now = Date.now()
-      view.src = `${baseHost}/capture?_cb=${now}`
-      view2.src = `${baseHost}/capture?_cb=${old1}`
-      old1 = now
-      view3.src = `${baseHost}/capture?_cb=${old2}`
-      old2 = old1
-      view4.src = `${baseHost}/capture?_cb=${old3}`
-      old3 = old2
-      view5.src = `${baseHost}/capture?_cb=${old4}`
-      old4 = old3
-      view6.src = `${baseHost}/capture?_cb=${old5}`
-      old5 = old4
       view7.src = `${baseHost}/capture?_cb=${old6}`
-      old6 = old5
-      show(viewContainer)
-      }
-      } else if (value == 8) {
-      stillButton.onclick = () => {
-      stopStream()
-      now = Date.now()
-      view.src = `${baseHost}/capture?_cb=${now}`
-      view2.src = `${baseHost}/capture?_cb=${old1}`
-      old1 = now
-      view3.src = `${baseHost}/capture?_cb=${old2}`
-      old2 = old1
-      view4.src = `${baseHost}/capture?_cb=${old3}`
-      old3 = old2
-      view5.src = `${baseHost}/capture?_cb=${old4}`
-      old4 = old3
-      view6.src = `${baseHost}/capture?_cb=${old5}`
-      old5 = old4
-      view7.src = `${baseHost}/capture?_cb=${old6}`
-      old6 = old5
       view8.src = `${baseHost}/capture?_cb=${old7}`
+
       old7 = old6
+      old6 = old5
+      old5 = old4
+      old4 = old3
+      old3 = old2
+      old2 = old1
+      old1 = now
+
       show(viewContainer)
-      }
-      }
   }
 
   closeButton.onclick = () => {
